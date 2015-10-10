@@ -1,4 +1,5 @@
 execute pathogen#infect()
+call pathogen#runtime_append_all_bundles() 
 syntax on
 filetype plugin indent on
 
@@ -57,12 +58,19 @@ set secure
 set number
 " Enable syntax highlighting
 syntax on
+" enable syntax processing
+syntax enable
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
-" Show “invisible” characters
+" number of spaces in tab when editing
+set softtabstop=2
+" show invisible characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" tabs are spaces
+set expandtab
+
 set list
 " Highlight searches
 set hlsearch
@@ -73,7 +81,7 @@ set incsearch
 " Always show status line
 set laststatus=2
 " Enable mouse in all modes
-set mouse=v
+set mouse=n
 " Disable error bells
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
